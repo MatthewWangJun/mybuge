@@ -10,31 +10,21 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-
-    var options = {}
-    options.multiple = true;
-    options.desiredFields = [navigator.contacts.fieldType.id];
-    options.hasPhoneNumber = true;
-    var fields       = [navigator.contacts.fieldType.phoneNumbers, navigator.contacts.fieldType.name];
-    navigator.contacts.find(fields, onSuccess, onError, options);
-    // Some fake testing data
-    function onSuccess(contacts) {
-      console.log('Found ' + contacts.length + ' contacts.');
-      $scope.chats=contacts;
-    };
-
-    function onError(contactError) {
-      alert('onError!');
-    };
-
-
     $scope.chats = Chats.all();
+    navigator.contactsPhoneNumbers.list(function(contacts) {
+      $scope.chats=contacts
+    }, function(error) {
+      console.error(error);
+    });
+
+
+
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+.controller('ChatDetailCtrl', function($scope, $stateParams) {
   $scope.chat = $stateParams.chat;
 })
 

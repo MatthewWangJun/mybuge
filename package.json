@@ -54,6 +54,10 @@
     "org.apache.cordova.device",
     "org.apache.cordova.console",
     "com.ionic.keyboard",
-    "cordova-plugin-contacts"
+    "cordova-plugin-contacts",
+    "cordova-plugin-contacts-phonenumbers"
+  ],
+  "cordovaPlatforms": [
+    "android"
   ]
 }

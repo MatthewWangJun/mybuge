@@ -3,8 +3,8 @@
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat}}">
         <img ng-src="{{chat.face}}">
-        <h2>{{chat.displayName || chat.givenName|| chat}}</h2>
-        <p>{{chat.phoneNumbers}}</p>
+        <h2>{{chat.displayName}}</h2>
+        <p ng-repeat="phoneNumbers in chat.phoneNumbers">{{phoneNumbers.normalizedNumber}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
