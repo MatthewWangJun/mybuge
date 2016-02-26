@@ -1,8 +1,8 @@
-<ion-view view-title="Chats">
+<ion-view view-title="我的联系人">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat}}">
-        <img ng-src="{{chat.face}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/detail/{{chat.id}}">
+        <img ng-src="images/noavatar_small.gif">
         <h2>{{chat.displayName}}</h2>
         <p ng-repeat="phoneNumbers in chat.phoneNumbers">{{phoneNumbers.normalizedNumber}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>

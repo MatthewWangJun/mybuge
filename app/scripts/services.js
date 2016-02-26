@@ -3,54 +3,61 @@ angular.module('starter.services', [])
 .factory('Chats', function() {
    //Might use a resource here that returns a JSON array
 
-    var chats = [{
+    var chats = [];
+   /* {
       id: 0,
-      name: 'Ben Sparrow',
-      phoneNumbers: 'You on your way?',
+        displayName: 'Ben Sparrow',
+      phoneNumbers: [{"normalizedNumber":'18591404229'},{"normalizedNumber":'185914042779'}],
       face: 'images/ben.png'
     }, {
       id: 1,
-      name: 'Max Lynx',
-      phoneNumbers: 'Hey, it\'s me',
-      face: 'images/max.png'
+        displayName: 'Max Lynx',
+        phoneNumbers:  [{"normalizedNumber":'18591404229'},{"normalizedNumber":'185914042779'}],
+        face: 'images/max.png'
     }, {
       id: 2,
-      name: 'Adam Bradleyson',
-      phoneNumbers: 'I should buy a boat',
-      face: 'images/adam.jpg'
+        displayName: 'Adam Bradleyson',
+        phoneNumbers: [{"normalizedNumber":'18591404229'},{"normalizedNumber":'185914042779'}],
+        face: 'images/adam.jpg'
     }, {
       id: 3,
-      name: 'Perry Governor',
-      phoneNumbers: 'Look at my mukluks!',
-      face: 'images/perry.png'
+        displayName: 'Perry Governor',
+        phoneNumbers: [{"normalizedNumber":'18591404229'},{"normalizedNumber":'185914042779'}],
+        face: 'images/perry.png'
     }, {
       id: 4,
-      name: 'Mike Harrington',
-      phoneNumbers: 'This is wicked good ice cream.',
-      face: 'images/mike.png'
-    }];
+        displayName: 'Mike Harrington',
+        phoneNumbers: [{"normalizedNumber":'18591404229'},{"normalizedNumber":'185914042779'}],
+        face: 'images/mike.png'
+    }
+*/
 
 
 
-
-// find all contacts with 'Bob' in any name field
+// find all contacts with 'Bob' in any displayName field
 
 
   return {
     all: function() {
-
-      return chats;
+     return  chats;
     },
     remove: function(chat) {
       chats.splice(chats.indexOf(chat), 1);
     },
     get: function(chatId) {
       for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
+        if (chats[i].id == parseInt(chatId)) {
           return chats[i];
         }
       }
       return null;
-    }
+    },
+    getContacts:function(){
+      navigator.contactsPhoneNumbers.list(function(contacts) {
+        chats=contacts;
+      }, function(error) {
+        console.error(error);
+      });
+    },
   };
 });

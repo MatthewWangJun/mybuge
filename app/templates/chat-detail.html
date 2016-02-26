@@ -5,9 +5,18 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{chat.displayName}}">
-  <h2>{{chat.displayName}}</h2>
   <ion-content class="padding">
-    {{chat}}}
-    <a class="button button-full button-positive" ng-repeat="number in chat.phoneNumbers"  href="tel:{{number.normalizedNumber}}" >{{number.normalizedNumber}}</a>
+    <div class="row" >
+      <div class="item-avatar " style="margin:auto;position: relative;">
+        <img ng-src="images/noavatar_small.gif">
+
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:5px;">{{chat.displayName}}</div>
+    <ul class="list">
+      <li  ng-repeat="number in chat.phoneNumbers">
+        <a class="button button-block button-royal icon ion-ios-telephone-outline"   href="tel:{{number.normalizedNumber}}" >{{number.normalizedNumber}}</a>
+      </li>
+    </ul>
   </ion-content>
 </ion-view>
