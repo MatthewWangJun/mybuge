@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -11,7 +11,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <link href="styles/style.css" rel="stylesheet">
-
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="styles/ionic.app.css" rel="stylesheet">
     -->
@@ -30,17 +29,18 @@
     <!-- endbuild -->
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+    <!--<script src="cordova.js"></script>-->
 
-    <!-- your app's js -->
-    <!-- build:js scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/services.js"></script>
-    <script src="scripts/configuration.js"></script>
+    <!--&lt;!&ndash; your app's js &ndash;&gt;-->
+    <!--&lt;!&ndash; build:js scripts/scripts.js &ndash;&gt;-->
+    <!--<script src="js/app.js"></script>-->
+    <!--<script src="js/controllers.js"></script>-->
+    <!--<script src="js/services.js"></script>-->
+    <!--<script src="js/configuration.js"></script>-->
     <!-- endbuild -->
+    <script   data-main="main.js" src="js/require.js"></script>
   </head>
-  <body ng-app="starter">
+  <body ng-app="">
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
@@ -53,6 +53,8 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    <ion-nav-view></ion-nav-view>
+    <ion-nav-view>
+    </ion-nav-view>
+
   </body>
 </html>

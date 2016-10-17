@@ -1,4 +1,4 @@
-<ion-view view-title="我的联系人">
+<ion-view view-title="我的联系人" ng-controller="ChatsCtrl">
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/detail/{{chat.id}}">
@@ -13,4 +13,5 @@
       </ion-item>
     </ion-list>
   </ion-content>
+  <!--<iframe src="http://172.16.40.66:9000/" height="100%" width="100%"  scrolling="no" />-->
 </ion-view>
