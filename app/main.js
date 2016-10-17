@@ -15,12 +15,12 @@ require.config({
     "angularBootstrap": "bower_components/angular-bootstrap/angular-bootstrap",
     'ionic': 'bower_components/ionic/release/js/ionic.bundle',
 
-    "ChatDetailCtrl": "js/scripts/controller/chat-detail-ctrl",
-    "DashCtrl": "js/scripts/controller/dash-ctrl",
-    "ChatsCtrl": "js/scripts/controller/chats-ctrl",
-    "AccountCtrl": "js/scripts/controller/account-ctrl",
+    "ChatDetailCtrl": "js/controller/chat-detail-ctrl",
+    "DashCtrl": "js/controller/dash-ctrl",
+    "ChatsCtrl": "js/controller/chats-ctrl",
+    "AccountCtrl": "js/controller/account-ctrl",
 
-    "dataServices":"js/scripts/service/dataServices",
+    "dataServices":"js/service/dataServices",
     "app":"app"
     },
     shim: {
